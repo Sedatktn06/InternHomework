@@ -16,7 +16,7 @@ namespace InternHomework.API.Controllers
     {
         public UserInfoDTO Login(string Email, string Password)
         {
-            var query = $"select * from dbo.UserInfo where Email='{Email}' and {Password}='b'";
+            var query = $"select * from dbo.UserInfo where Email='{Email}' and Password='{Password}'";
             var connectionStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DbUserCopy;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             var connection = new SqlConnection(connectionStr);
             var command = new SqlCommand(query, connection);
